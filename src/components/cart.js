@@ -70,6 +70,10 @@ class Cart extends React.Component {
                 </tr>
               ))
             }
+            <tr>
+              <td colSpan="4"><b>Total Price</b></td>
+              <td><b>{this.props.order.sub_total}</b></td>
+            </tr>
           </tbody>
         </Table>
       
@@ -89,7 +93,8 @@ const mapStateToProps = state => {
       loggedInStatus: state.session.loggedInStatus,
       email: state.session.user.data.user.email,
       token: state.session.user.data.user.authentication_token,
-      items: state.cart.items
+      items: state.cart.items,
+      order: state.cart.order
     }
   }
   else
